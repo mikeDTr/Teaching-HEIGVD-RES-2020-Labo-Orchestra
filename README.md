@@ -167,8 +167,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | When and how do we **get rid of inactive players**?  |
 | | En checkant, à intervalle régulière, les musciens inactif depuis plus de 5 secondes, puis en utilisant map.delete(key)|
 |Question | How do I implement a **simple TCP server** in Node.js?  |
-| | Avec  :"const net = require('net');
-tcp_server = net.createServer(onConnection);"  |
+| | Avec  :"const net = require('net'); tcp_server = net.createServer(onConnection);"  |
 
 
 
@@ -177,13 +176,12 @@ tcp_server = net.createServer(onConnection);"  |
 | #  | Topic |
 | ---  | --- |
 |Question | How do we validate that the whole system works, once we have built our Docker image? |
-| | 
-En lançant un container auditor, puis un ou plusisieur musician, et en se connectant sur le port 2205 de l'auditor"
+| | En lançant un container auditor, puis un ou plusisieur musician, et en se connectant sur le port 2205 de l'auditor"|
 
 Durant le cours de RES, nous avons découvert
 Comment utiliser des outils salutaires.
 Pour faire part de notre grande gratitude,
-Nous avons écrit ses vers plein de platitudes.|
+Nous avons écrit ses vers plein de platitudes.
 
 
 ## Constraints
