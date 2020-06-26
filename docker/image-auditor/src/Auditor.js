@@ -31,11 +31,13 @@ socket.bind(protocol.UDP_PORT, function() {
 
 socket.on('message', function(message, source) {
 	
-    console.log("Received : \n"
-    + message);
+    /*console.log("Received : \n"
+    + message);*/
 
     var payload = JSON.parse(message);
-	Musiciens.set(payload.id,new Musicien(payload.uuid,INSTRUMENTS_SOUNDS.get(payload['sound']),moment().format("YYYY-MM-DD HH:mm:ss")));
+	var musicien = new Musicien(payload.uuid,INSTRUMENTS_SOUNDS.get(payload['sound']),moment().format("YYYY-MM-DD HH:mm:ss"))
+	
+	Musiciens.set(payload.uuid,musicien);
 
 });
 
@@ -46,16 +48,15 @@ tcp_server.listen(protocol.TCP_PORT);
 function onConnection(socket){
     var musiciansList = [];
     
-	for([key,value] of Musiciens){
+	for(var[key,value] of Musiciens){
         musiciansList.push(value);
     }
-
     socket.write(JSON.stringify(musiciansList));
     socket.destroy();
 }
 
  function isStillActive(){
-     for([key,value] of Musiciens){
+     for(var[key,value] of Musiciens){
          var currentTime = moment(), LastTimeActive = moment(value.activeSince);
 
          if(moment.duration(currentTime.diff(LastTimeActive)).as("seconds") > 5){
@@ -64,4 +65,4 @@ function onConnection(socket){
      }
  }
 
- setInterval(isStillActive,1000);
+setInterval(isStillActive,1000);
