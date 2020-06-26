@@ -178,10 +178,10 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | How do we validate that the whole system works, once we have built our Docker image? |
 | | En lançant un container auditor, puis un ou plusisieur musician, et en se connectant sur le port 2205 de l'auditor"|
 
-Durant le cours de RES, nous avons découvert
-Comment utiliser des outils salutaires.
-Pour faire part de notre grande gratitude,
-Nous avons écrit ses vers plein de platitudes.
+> Durant le cours de RES, nous avons découvert
+> Comment utiliser des outils salutaires. 
+> Pour faire part de notre grande gratitude, 
+> Nous avons écrit ses vers plein de platitudes.
 
 
 ## Constraints
